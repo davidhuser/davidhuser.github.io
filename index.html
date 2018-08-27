@@ -4,7 +4,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>davidhuser.ch</title>
 <style>
-	@import url('https://fonts.googleapis.com/css?family=Overpass');
+	@font-face {
+	  font-family: 'Overpass';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Overpass Regular'), local('Overpass-Regular'),
+	       url('../fonts/overpass-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	       url('../fonts/overpass-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	@font-face {
+	  font-family: 'Overpass';
+	  font-style: normal;
+	  font-weight: 700;
+	  src: local('Overpass Bold'), local('Overpass-Bold'),
+	       url('../fonts/overpass-v2-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	       url('../fonts/overpass-v2-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+
 	body {
 		margin:1em auto;
 		max-width:40em;
