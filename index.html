@@ -5,12 +5,17 @@
 <meta name="referrer" content="no-referrer">
 <title>davidhuser.ch</title>
 
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <style>
 	@font-face {
 	  font-family: 'IBM Plex Sans';
-	  src:  url('../fonts/IBMPlexSans-Regular.woff2') format('woff2'),
-	        url('../fonts/IBMPlexSans-Regular.woff') format('woff');
+	  src:  url('./fonts/IBMPlexSans-Regular.woff2') format('woff2'),
+	        url('./fonts/IBMPlexSans-Regular.woff') format('woff');
 	}
 
 	body {
@@ -20,6 +25,7 @@
 		font-family: 'IBM Plex Sans', sans-serif;
 		line-height: 1.62;
 		background: #f5f5f5;
+		font-size: 18px;
 	}
 	h1,h2,h3 {
 		line-height: 1.2;
@@ -32,6 +38,9 @@
 		background-color: #fff386;
 		color: black;
 	}
+	ul {
+     list-style:none;
+ 	}
 	@media print {
 		body {
 			max-width:none
@@ -49,23 +58,32 @@
 	.feather-16{
     	width: 16px;
     	height: 16px;
+    	margin: 0 8px 0 15px
 	}
 </style>
 <body>
 <div id="content">
+	<hr>
 	<header>
 		<h3>David Huser</h3>
 	</header>
-	<p>👋  I'm a health information systems engineer working on <a title="DHIS2" href="https://dhis2.org" target="_blank">DHIS2</a> and other open source things. 
+
+	<p>👋  &nbsp;&nbsp;I'm a health information systems engineer working on <a title="DHIS2" href="https://dhis2.org" target="_blank">DHIS2</a> and other open source things. 
 		Currently a Master student of Information Sciences at <a title="VU" href="https://www.vu.nl/en/" target="_blank">VU University Amsterdam</a>. 
 		Some other sites where you can find me:
-		<ul>
-			<li><i class="feather-16" data-feather="github"></i><a title="Github" href="https://github.com/davidhuser" target="_blank">Github</a>
-			<li><i class="feather-16" data-feather="linkedin"></i><a title="LinkedIn" href="https://www.linkedin.com/in/davidhuser" target="_blank">LinkedIn</a>
-			<li><i class="feather-16" data-feather="key"></i><a title="SSH key" href="https://github.com/davidhuser.keys" target="_blank">Public ssh key</a>
-			<li><i class="feather-16" data-feather="twitter"></i><a title="Twitter" href="https://twitter.com/davidhuser762" target="_blank">Twitter</a>
-		</ul>
 	</p>
+	<ul>
+		<li><i class="feather-16" data-feather="github"></i><a title="Github" href="https://github.com/davidhuser" target="_blank">Github</a></li>
+		<li><i class="feather-16" data-feather="linkedin"></i><a title="LinkedIn" href="https://www.linkedin.com/in/davidhuser" target="_blank">LinkedIn</a></li>
+		<li><i class="feather-16" data-feather="twitter"></i><a title="Twitter" href="https://twitter.com/davidhuser762" target="_blank">Twitter</a></li>
+	</ul>
+	
+	<p>In case of providing access:
+	<ul>
+		<li><i class="feather-16" data-feather="key"></i><a title="SSH key" href="https://github.com/davidhuser.keys" target="_blank">Public ssh key</a></li>
+	</ul>
+	</p>
+
 	<hr>
 </div>
 </body>
