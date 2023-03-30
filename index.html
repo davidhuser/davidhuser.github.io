@@ -16,15 +16,38 @@
 	<link rel="manifest" href="./favicon/site.webmanifest">
 
 	<script src="./js/feather.min.js"></script>
+
 	<style>
 		body {
 			max-width: 42rem;
 			padding: 2rem 2rem;
 			font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 			line-height: 1.7;
-			color: #444;
 			font-size: 1rem;
-			background: #f7f7f7;
+		}
+
+		@media (prefers-color-scheme: light) {
+			body {
+				background: #f7f7f7;
+				color: #444;
+			}
+			a {
+				text-decoration: underline;
+				color: blue;
+				padding-right: 6px;
+			}
+		}
+
+		@media (prefers-color-scheme: dark) {
+			body {
+				background: #151515;
+				color: #e1e1e1;
+			}
+			a {
+				text-decoration: underline;
+				color: #76a5ff;
+				padding-right: 6px;
+			}
 		}
 
 		h1 {
@@ -37,29 +60,35 @@
 			line-height: 1.2;
 		}
 
-		a {
-			text-decoration: none;
-			color: blue;
-			padding-right: 6px;
-		}
-
 		a:hover {
 			background-color: #fff386;
 			color: black;
+		}
+
+		::-moz-selection {
+				background: #fff386;
+				color: #1a1a1a;
+			}
+
+			::selection {
+				background: #fff386;
+				color: #1a1a1a;
+			}
+
+		ul {
+			list-style: none;
+			padding-left: 0px;
+			margin-top: 30px;
+		}
+
+		li {
+			margin-bottom: 4px;
 		}
 
 		@media print {
 			body {
 				max-width: none
 			}
-		}
-
-		::-moz-selection {
-			background: #fff386;
-		}
-
-		::selection {
-			background: #fff386;
 		}
 
 		.feather-16 {
@@ -72,15 +101,7 @@
 			margin: 0 10px 0 5px;
 		}
 
-		ul {
-			list-style: none;
-			padding-left: 0px;
-			margin-top: 30px;
-		}
 
-		li {
-			margin-bottom: 4px;
-		}
 	</style>
 </head>
 
@@ -90,7 +111,7 @@
 	</header>
 
 	<main>
-		<p>Hello! <span style="font-size:20px">👋</span><br><br>I'm David Huser, software developer based in
+		<p>Hello! <span style="font-size:20px">👋</span><br><br>I'm <strong>David Huser</strong>, software developer based in
 			Switzerland. </p>
 		<nav>
 			<ul>
