@@ -26,29 +26,34 @@
 			font-size: 1rem;
 		}
 
-		@media (prefers-color-scheme: light) {
-			body {
-				background: #f7f7f7;
-				color: #444;
-			}
-			a {
-				text-decoration: underline;
-				color: blue;
-				padding: 1px;
-			}
+		.dark-theme {
+			background: #151515;
+			color: #e1e1e1;
 		}
 
-		@media (prefers-color-scheme: dark) {
-			body {
-				background: #151515;
-				color: #e1e1e1;
-			}
-			a {
-				text-decoration: underline;
-				color: #76a5ff;
-				padding: 1px;
-			}
+		.dark-theme a {
+			text-decoration: underline;
+			color: #76a5ff;
+			padding: 1px;
 		}
+
+		.light-theme {
+			background: #f7f7f7;
+			color: #444;
+		}
+
+		.light-theme a {
+			text-decoration: underline;
+			color: blue;
+			padding: 1px;
+		}
+
+		#theme-toggler {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
 
 		h1 {
 			display: none;
@@ -108,20 +113,57 @@
 <body>
 	<header>
 		<h1>David Huser, software developer</h1>
+		<i id="theme-toggler" class="feather-16 icon-margin" tabindex="0" role="button" aria-label="Toggle theme"></i>
 	</header>
 	<main>
 		<p>Hello! <span style="font-size:20px">👋</span><br><br>I'm David Huser, a software developer based in
 			Switzerland. </p>
 		<nav>
 			<ul>
-				<li><i class="feather-16 icon-margin" data-feather="send"></i>Send <a title="email" href="mailto:davidhus@pm.me">email</a></li>
-				<li><i class="feather-16 icon-margin" data-feather="linkedin"></i>Connect on <a title="LinkedIn" href="https://www.linkedin.com/in/davidhuser" rel="noreferrer" target="_blank">LinkedIn</a></li>
-				<li><i class="feather-16 icon-margin" data-feather="github"></i>Visit my <a title="Github" href="https://github.com/davidhuser" rel="noreferrer" target="_blank">Github</a></li>
-				<li><i class="feather-16 icon-margin" data-feather="repeat"></i>Follow on <a rel="me" href="https://swiss.social/@davidhuser" rel="noreferrer" target="_blank">Mastodon</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="send" aria-hidden="true"></i>Send <a title="email" href="mailto:davidhus@pm.me">email</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="linkedin" aria-hidden="true"></i>Connect on <a title="LinkedIn" href="https://www.linkedin.com/in/davidhuser" rel="noreferrer" target="_blank">LinkedIn</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="github" aria-hidden="true"></i>Visit my <a title="Github" href="https://github.com/davidhuser" rel="noreferrer" target="_blank">Github</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="repeat" aria-hidden="true"></i>Follow on <a rel="me" href="https://swiss.social/@davidhuser" rel="noreferrer" target="_blank">Mastodon</a></li>
 			</ul>
 		</nav>
+	</main>
 </body>
 
 <script>
-	feather.replace({ 'stroke-width': 1.75 })
+    feather.replace({ 'stroke-width': 1.75 })
+
+    const toggler = document.getElementById('theme-toggler');
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+	function updateIcon() {
+	    while (toggler.firstChild) {
+	        toggler.firstChild.remove();
+	    }
+
+	    let icon = document.body.classList.contains('dark-theme') ? 'sun' : 'moon';
+	    
+	    let newIcon = feather.icons[icon].toSvg({ 'stroke-width': 1.25 });
+	    
+	    toggler.insertAdjacentHTML('afterbegin', newIcon);
+	    toggler.firstChild.setAttribute('aria-hidden', 'true');
+	}
+
+    if (prefersDarkScheme.matches) {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.add('light-theme');
+    }
+
+    updateIcon();
+
+    toggler.addEventListener('click', function() {
+        if (document.body.classList.contains('dark-theme')) {
+            document.body.classList.replace('dark-theme', 'light-theme');
+        } else {
+            document.body.classList.replace('light-theme', 'dark-theme');
+        }
+        updateIcon();
+    });
 </script>
+
+</html>
