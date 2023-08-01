@@ -2,168 +2,41 @@
 <html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="referrer" content="no-referrer">
-	<meta name="author" content="David Huser">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David Huser's personal website. David is a software developer based in Switzerland">
+    <meta name="keywords" content="David Huser, Software Developer, Switzerland">
+    <meta name="author" content="David Huser">
+    <title>David Huser</title>
 
-	<meta name="description" content="Personal site of David Huser" />
-
-	<title>David Huser</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 	<link rel="manifest" href="./favicon/site.webmanifest">
 
-	<script src="./js/feather.min.js"></script>
-
-	<style>
-		body {
-			max-width: 42rem;
-			padding: 2rem 2rem;
-			font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-			line-height: 1.7;
-			font-size: 1rem;
-		}
-
-		.dark-theme {
-			background: #151515;
-			color: #e1e1e1;
-		}
-
-		.dark-theme a {
-			text-decoration: underline;
-			color: #76a5ff;
-			padding: 1px;
-		}
-
-		.light-theme {
-			background: #f7f7f7;
-			color: #444;
-		}
-
-		.light-theme a {
-			text-decoration: underline;
-			color: blue;
-			padding: 1px;
-		}
-
-		#theme-toggler {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            cursor: pointer;
-        }
-
-		h1 {
-			display: none;
-		}
-
-		h1,
-		h2,
-		h3 {
-			line-height: 1.2;
-		}
-
-		a:hover {
-			background-color: #fff386;
-			color: black;
-		}
-
-		::-moz-selection {
-				background: #fff386;
-				color: #1a1a1a;
-			}
-
-			::selection {
-				background: #fff386;
-				color: #1a1a1a;
-			}
-
-		ul {
-			list-style: none;
-			padding-left: 0px;
-			margin-top: 30px;
-		}
-
-		li {
-			margin-bottom: 4px;
-		}
-
-		@media print {
-			body {
-				max-width: none
-			}
-		}
-
-		.feather-16 {
-			width: 18px;
-			height: 18px;
-			margin: 0 18px 0 6px
-		}
-
-		.icon-margin {
-			margin: 0 10px 0 5px;
-		}
-
-
-	</style>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
+	<i id="theme-toggler" class="feather-16 icon-margin" tabindex="0" role="button" aria-label="Toggle theme"></i>
 	<header>
 		<h1>David Huser, software developer</h1>
-		<i id="theme-toggler" class="feather-16 icon-margin" tabindex="0" role="button" aria-label="Toggle theme"></i>
 	</header>
 	<main>
 		<p>Hello! <span style="font-size:20px">👋</span><br><br>I'm David Huser, a software developer based in
 			Switzerland. </p>
 		<nav>
 			<ul>
-				<li><i class="feather-16 icon-margin" data-feather="send" aria-hidden="true"></i>Send <a title="email" href="mailto:davidhus@pm.me">email</a></li>
-				<li><i class="feather-16 icon-margin" data-feather="linkedin" aria-hidden="true"></i>Connect on <a title="LinkedIn" href="https://www.linkedin.com/in/davidhuser" rel="noreferrer" target="_blank">LinkedIn</a></li>
-				<li><i class="feather-16 icon-margin" data-feather="github" aria-hidden="true"></i>Visit my <a title="Github" href="https://github.com/davidhuser" rel="noreferrer" target="_blank">Github</a></li>
-				<li><i class="feather-16 icon-margin" data-feather="repeat" aria-hidden="true"></i>Follow on <a rel="me" href="https://swiss.social/@davidhuser" rel="noreferrer" target="_blank">Mastodon</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="send"></i>Send <a title="email" href="mailto:davidhus@pm.me">email</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="linkedin"></i>Connect on <a title="LinkedIn" href="https://www.linkedin.com/in/davidhuser" rel="noreferrer" target="_blank">LinkedIn</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="github"></i>Visit my <a title="Github" href="https://github.com/davidhuser" rel="noreferrer" target="_blank">Github</a></li>
+				<li><i class="feather-16 icon-margin" data-feather="repeat"></i>Follow on <a rel="me" href="https://swiss.social/@davidhuser" rel="noreferrer" target="_blank">Mastodon</a></li>
 			</ul>
 		</nav>
 	</main>
 </body>
 
-<script>
-    feather.replace({ 'stroke-width': 1.75 })
-
-    const toggler = document.getElementById('theme-toggler');
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-	function updateIcon() {
-	    while (toggler.firstChild) {
-	        toggler.firstChild.remove();
-	    }
-
-	    let icon = document.body.classList.contains('dark-theme') ? 'sun' : 'moon';
-	    
-	    let newIcon = feather.icons[icon].toSvg({ 'stroke-width': 1.25 });
-	    
-	    toggler.insertAdjacentHTML('afterbegin', newIcon);
-	    toggler.firstChild.setAttribute('aria-hidden', 'true');
-	}
-
-    if (prefersDarkScheme.matches) {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.add('light-theme');
-    }
-
-    updateIcon();
-
-    toggler.addEventListener('click', function() {
-        if (document.body.classList.contains('dark-theme')) {
-            document.body.classList.replace('dark-theme', 'light-theme');
-        } else {
-            document.body.classList.replace('light-theme', 'dark-theme');
-        }
-        updateIcon();
-    });
-</script>
+<script src="./js/feather.min.js"></script>
+<script src="./js/main.js"></script>
 
 </html>

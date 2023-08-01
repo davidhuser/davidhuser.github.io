@@ -1,0 +1,84 @@
+body {
+	max-width: 42rem;
+	padding: 2rem 2rem;
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+	line-height: 1.7;
+	font-size: 1rem;
+	background: #f7f7f7;
+	color: #444;
+}
+
+.dark-theme {
+	background: #151515;
+	color: #e1e1e1;
+}
+
+.dark-theme a {
+	text-decoration: underline;
+	color: #76a5ff;
+	padding: 1px;
+}
+
+#theme-toggler {
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	cursor: pointer;
+}
+
+h1 {
+	display: none;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+}
+
+a:hover {
+	background-color: #fff386;
+	color: black;
+}
+
+a {
+	text-decoration: underline;
+	color: blue;
+	padding: 1px;
+}
+
+::-moz-selection {
+	background: #fff386;
+	color: #1a1a1a;
+}
+
+::selection {
+	background: #fff386;
+	color: #1a1a1a;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0px;
+	margin-top: 30px;
+}
+
+li {
+	margin-bottom: 4px;
+}
+
+@media print {
+	body {
+		max-width: none
+	}
+}
+
+.feather-16 {
+	width: 18px;
+	height: 18px;
+	margin: 0 18px 0 6px;
+}
+
+.icon-margin {
+	margin: 0 10px 0 5px;
+}
